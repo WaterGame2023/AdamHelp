@@ -1,9 +1,10 @@
 def in_boardboundary(col, row):
-    print(type(col))
-    print(type(row))
-    if col[0] < 0 or col[0] > 7:
+    print('in_boardboundry: column:{0}, row:{1}'.format(col, row))
+    #print(type(col))
+    #print(type(row))
+    if col < 0 or col > 7:
         return False
-    if row[0] < 0 or row[0] > 7:
+    if row < 0 or row > 7:
         return False
     return True
 
@@ -67,50 +68,50 @@ class King(Chess_Piece):
     def moves(self, board):
         col = "abcdefgh"
         row = "12345678"
-        index_col = (self.position[0],)
+        index_col = self.position[0]
         index_row = self.position[1]
         if in_boardboundary(index_col, index_row):
-            pos = col[index_col[0]] + row[index_row]
+            pos = col[index_col] + row[index_row]
             board.set(pos, "x")
-        index_col = (self.position[0] + 1,)
+        index_col = self.position[0] + 1
         index_row = self.position[1]
         if in_boardboundary(index_col, index_row):
-            pos = col[index_col[0]] + row[index_row]
+            pos = col[index_col] + row[index_row]
             board.set(pos, "x")
 
-        index_col = (self.position[0] + 1,)
+        index_col = self.position[0] + 1
         index_row = self.position[1] + 1
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
-        index_col = (self.position[0],)
+        index_col = self.position[0]
         index_row = self.position[1] + 1
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
-        index_col = (self.position[0] - 1,)
+        index_col = self.position[0] - 1
         index_row = self.position[1] + 1
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
-        index_col = (self.position[0] - 1,)
+        index_col = self.position[0] - 1
         index_row = self.position[1]
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
-        index_col = (self.position[0] - 1,)
+        index_col = self.position[0] - 1
         index_row = self.position[1] - 1
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
-        index_col = (self.position[0],)
+        index_col = self.position[0]
         index_row = self.position[1] - 1
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
-        index_col = (self.position[0] + 1,)
+        index_col = self.position[0] + 1
         index_row = self.position[1] - 1
-        pos = col[index_col[0]] + row[index_row]
+        pos = col[index_col] + row[index_row]
         board.set(pos, "x")
 
 
